@@ -1,20 +1,14 @@
 // Countdown Timer
-const birthdayDate = new Date("April 10, 2025 00:00:00").getTime();
+const birthdayDate = new Date("July 1, 2025 00:00:00").getTime();
+
 const countdown = setInterval(function () {
     const now = new Date().getTime();
     const timeLeft = birthdayDate - now;
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
     if (timeLeft < 0) {
         clearInterval(countdown);
-        document.getElementById("timer").innerHTML = "🎉 It's Ninu's Birthday! 🎂";
-        startConfetti(); // Start animation on birthday
+        document.getElementById("birthday-message").style.display = "block";
+        startConfetti();
     }
 }, 1000);
 
