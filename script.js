@@ -1,16 +1,3 @@
-// Countdown Timer
-const birthdayDate = new Date("July 1, 2025 00:00:00").getTime();
-
-const countdown = setInterval(function () {
-    const now = new Date().getTime();
-    const timeLeft = birthdayDate - now;
-
-    if (timeLeft < 0) {
-        clearInterval(countdown);
-        document.getElementById("birthday-message").style.display = "block";
-        startConfetti();
-    }
-}, 1000);
 
 // Confetti Animation
 function startConfetti() {
